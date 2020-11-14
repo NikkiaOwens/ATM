@@ -114,6 +114,7 @@ public class Console {
                     System.out.println(current.checkingWithdraw(withdraw));
                     System.out.println("current balance: ");
                     System.out.println(current.getCheckingBalance());
+                    list.add("Withdrew: " + withdraw + "Remaining balance: " + current.getCheckingBalance() +"\n");
                     break;
                 case 2:
                     System.out.println("Enter amount to deposit");
