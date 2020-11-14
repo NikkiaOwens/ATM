@@ -8,7 +8,9 @@ public class Console {
     UserWarehouse UW = new UserWarehouse();
     HashMap<String, Integer> userList = UW.getAccounts();
     HashMap<String, User> objList = UW.getObjectList();
+    StringBuilder transactionHistory = new StringBuilder();
     Menu menu = new Menu();
+
 
     public Console() {
     }
@@ -86,6 +88,8 @@ public class Console {
                     break;
                 case 4:
                     //print transaction history
+                    System.out.println("Transaction History");
+                    getTransactions();
                     break;
                 case 5:
                     quit = true;
@@ -96,6 +100,11 @@ public class Console {
             }
         }
         verifyUser();
+    }
+
+    public void getTransactions(){
+        String trans = transactionHistory.toString();
+        System.out.print(trans);
     }
 
     public void checkAcctMenu(User current) {
@@ -113,7 +122,7 @@ public class Console {
                     System.out.println(current.checkingWithdraw(withdraw));
                     System.out.println("current balance: ");
                     System.out.println(current.getCheckingBalance());
-
+                    transactionHistory.append("Withdrew: " + withdraw + " from checking. " + "Remaining Balance: " + current.getCheckingBalance() + "\n");
                     break;
                 case 2:
                     System.out.println("Enter amount to deposit");
@@ -123,6 +132,7 @@ public class Console {
                     current.checkingDeposit(deposit);
                     System.out.println("current balance: ");
                     System.out.println(current.getCheckingBalance());
+                    transactionHistory.append("Deposited: " + deposit + " into checking. " + "Remaining Balance: " + current.getCheckingBalance() + "\n");
                     break;
                 case 3:
                     System.out.println(current.getCheckingBalance());
@@ -182,6 +192,7 @@ public class Console {
                         System.out.println(current.savingsWithdraw(withdraw));
                         System.out.println("current balance: ");
                         System.out.println(current.getSavingBalance());
+                        transactionHistory.append("Withdrew: " + withdraw + " from savings. " + "Remaining Balance: " + current.getSavingBalance() + "\n");
                         break;
                     case 2:
                         System.out.println("Enter amount to deposit");
@@ -191,6 +202,7 @@ public class Console {
                         current.savingsDeposit(deposit);
                         System.out.println("current balance: ");
                         System.out.println(current.getSavingBalance());
+                        transactionHistory.append("Deposited: " + deposit + " into savings. " + "Remaining Balance: " + current.getSavingBalance() + "\n");
                         break;
                     case 3:
                         System.out.println(current.getSavingBalance());
@@ -252,6 +264,7 @@ public class Console {
                     System.out.println(current.investmentWithdraw(withdraw));
                     System.out.println("current balance: ");
                     System.out.println(current.getInvestmentBalance());
+                    transactionHistory.append("Withdrew: " + withdraw + " from investment. " + "Remaining Balance: " + current.getInvestmentBalance() + "\n");
                     break;
                 case 2:
                     System.out.println("Enter amount to deposit");
@@ -261,6 +274,7 @@ public class Console {
                     current.investmentDeposit(deposit);
                     System.out.println("current balance: ");
                     System.out.println(current.getInvestmentBalance());
+                    transactionHistory.append("Deposited: " + deposit + " into investment. " + "Remaining Balance: " + current.getInvestmentBalance() + "\n");
                     break;
                 case 3:
                     System.out.println(current.getInvestmentBalance());
