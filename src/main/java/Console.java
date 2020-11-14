@@ -164,7 +164,7 @@ public class Console {
                         System.out.println("You withdrew: ");
                         System.out.println(current.savingsWithdraw(withdraw));
                         System.out.println("current balance: ");
-                        System.out.println(current.getCheckingBalance());
+                        System.out.println(current.getSavingBalance());
                         break;
                     case 2:
                         System.out.println("Enter amount to deposit");
@@ -173,7 +173,7 @@ public class Console {
                         System.out.println("You deposited: ");
                         current.savingsDeposit(deposit);
                         System.out.println("current balance: ");
-                        System.out.println(current.getCheckingBalance());
+                        System.out.println(current.getSavingBalance());
                         break;
                     case 3:
                         System.out.println(current.getSavingBalance());

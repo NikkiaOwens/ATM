@@ -35,6 +35,8 @@ public class User {
         return savings.removeBalance(withdraw);
     }
 
+    public void savingsDeposit(double deposit) { savings.setBalance(deposit);}
+
 
     /**
      *
