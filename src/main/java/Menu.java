@@ -15,7 +15,7 @@ public class Menu {
     public void acctMenu(){
         System.out.println("Please enter your menu selection\n" +
                 "1:Withdraw 2:Deposit 3:Check balance 4:Transfer to my account \n" +
-                "5:Close account 6: Transfer to outside account 7:Back");
+                "5:Close account 6:Back");
     }
 
 

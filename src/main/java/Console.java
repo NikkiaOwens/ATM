@@ -144,25 +144,22 @@ public class Console {
                         System.out.println("Enter amount to transfer");
                         Scanner amt = new Scanner(System.in);
                         double amount = amt.nextDouble();
-                        if (acct.toLowerCase().equals("savings")) {
+                        if (acct.toLowerCase().equals("savings") && current.getHasSavings()==true) {
                             current.checkingWithdraw(amount);
                             current.savingsDeposit(amount);
                             System.out.println("Transfer successful \nCurrent balance: " + current.getCheckingBalance());
-                        } else if (acct.toLowerCase().equals("investment")) {
+                        } else if (acct.toLowerCase().equals("investment") && current.getHasInvestment()==true) {
                             current.checkingWithdraw(amount);
                             current.investmentDeposit(amount);
                             System.out.println("Transfer successful \nCurrent balance: " + current.getCheckingBalance());
                         } else {
-                            System.out.println("Incorrect input");
+                            System.out.println("Account not found. Please create account before transfer.");
                         }
                         break;
                     case 5:
                         System.out.println(current.closeCheck());
                         break;
                     case 6:
-                        //transfer to outside acct
-                        break;
-                    case 7:
                         back = true;
                         break;
                     default:
@@ -227,25 +224,22 @@ public class Console {
                         System.out.println("Enter amount to transfer");
                         Scanner amt = new Scanner(System.in);
                         double amount = amt.nextDouble();
-                        if (acct.toLowerCase().equals("checking")) {
+                        if (acct.toLowerCase().equals("checking") && current.getHasChecking()==true) {
                             current.savingsWithdraw(amount);
                             current.checkingDeposit(amount);
                             System.out.println("Transfer successful \nCurrent balance: " + current.getCheckingBalance());
-                        } else if (acct.toLowerCase().equals("investment")) {
+                        } else if (acct.toLowerCase().equals("investment") && current.getHasInvestment()==true) {
                             current.savingsWithdraw(amount);
                             current.investmentDeposit(amount);
                             System.out.println("Transfer successful \nCurrent balance: " + current.getCheckingBalance());
                         } else {
-                            System.out.println("Incorrect input");
+                            System.out.println("Account not found. Please create account before transfer.");
                         }
                         break;
                     case 5:
                         System.out.println(current.closeSaving());
                         break;
                     case 6:
-                        //transfer to outside acct
-                        break;
-                    case 7:
                         back = true;
                         break;
                     default:
@@ -311,27 +305,24 @@ public class Console {
                         System.out.println("Enter amount to transfer");
                         Scanner amt = new Scanner(System.in);
                         double amount = amt.nextDouble();
-                        if(acct.toLowerCase().equals("checking")){
+                        if(acct.toLowerCase().equals("checking") && current.getHasChecking()==true){
                             current.investmentWithdraw(amount);
                             current.checkingDeposit(amount);
                             System.out.println("Transfer successful \nCurrent balance: "+current.getCheckingBalance());
                         }
-                        else if(acct.toLowerCase().equals("savings")){
+                        else if(acct.toLowerCase().equals("savings")&& current.getHasSavings()==true){
                             current.investmentWithdraw(amount);
                             current.savingsDeposit(amount);
                             System.out.println("Transfer successful \nCurrent balance: "+current.getCheckingBalance());
                         }
                         else{
-                            System.out.println("Incorrect input");
+                            System.out.println("Account not found. Please create account before transfer.");
                         }
                         break;
                     case 5:
                         System.out.println(current.closeInvestment());
                         break;
                     case 6:
-                        //transfer to outside acct
-                        break;
-                    case 7:
                         back = true;
                         break;
                     default:
