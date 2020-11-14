@@ -4,7 +4,19 @@ public class UserVerification {
     /**
      *
      * this will tie into the hash map of user names and passwords
+     * perhaps just booleans if key(name) matches value(pin) return true
+     * else if key(name) does not match value(pin) return "entered wrong password"
+     * else if hashmap does not contain key return "this user does not exsist"
      */
+
+    public boolean verifiedUser(String name, Integer pin){
+        if (UserWarehouse.accounts.containsKey(name) && UserWarehouse.accounts.containsValue(pin)) {
+            return true;
+        } else //if (!UserWarehouse.accounts.containsValue(name))
+            return false; //user does not exsist
+
+        // can make it return string if not boolean
+    }
 /*
 Console console = new Console();
 public UserVerification(){

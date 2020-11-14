@@ -2,7 +2,7 @@
 import java.util.HashMap;
 
 public class UserWarehouse {
-    HashMap<String, Integer> accounts = new HashMap<String, Integer>();
+    public static HashMap<String, Integer> accounts = new HashMap<String, Integer>();
    // String name = "John";
     //Integer pin = 1234;
 
