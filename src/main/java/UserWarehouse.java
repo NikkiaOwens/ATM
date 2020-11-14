@@ -2,9 +2,17 @@
 import java.util.HashMap;
 
 public class UserWarehouse {
+
     public static HashMap<String, Integer> accounts = new HashMap<String, Integer>();
    // String name = "John";
     //Integer pin = 1234;
+   public static HashMap<String, Integer> getAccounts() {
+       return accounts;
+   }
+
+    public static void setAccounts(HashMap<String, Integer> accounts) {
+        UserWarehouse.accounts = accounts;
+    }
 
 
     public User createNewUser(String name) {

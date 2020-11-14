@@ -1,3 +1,4 @@
+import java.util.HashMap;
 import java.util.Scanner;
 
 public class UserVerification {
@@ -5,7 +6,8 @@ public class UserVerification {
      *
      * this will tie into the hash map of user names and passwords
      */
-/*
+UserWarehouse UW = new UserWarehouse();
+HashMap<String,Integer> userList = UW.getAccounts();
 Console console = new Console();
 public UserVerification(){
 
@@ -15,7 +17,7 @@ public UserVerification(){
         System.out.println("Enter full name");
         Scanner name = new Scanner(System.in);
         String fullName = name.nextLine();
-        if(userList.contains(fullName)){
+        if(userList.containsKey(fullName)){
             System.out.println("Enter password");
             Scanner pass = new Scanner(System.in);
             String password = pass.nextLine();
@@ -43,5 +45,5 @@ public UserVerification(){
     String password = pass.nextLine();
     //check password is a number then push name and password to the hash map
         System.out.println("Name and password are set");
-    } */
+    }
 }
