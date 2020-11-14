@@ -1,17 +1,16 @@
-import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.Scanner;
 
 public class Console {
 
 
-    //public void () {
+
     UserWarehouse UW = new UserWarehouse();
     HashMap<String, Integer> userList = UW.getAccounts();
     HashMap<String, User> objList = UW.getObjectList();
-    Menu menu = new Menu();
-    //ArrayList<String> transactionHistory= new ArrayList<String>();
     StringBuilder transactionHistory = new StringBuilder();
+    Menu menu = new Menu();
+
 
     public Console() {
     }
@@ -91,8 +90,7 @@ public class Console {
                 case 4:
                     //print transaction history
                     System.out.println("Transaction History");
-                    getTransactionHistory();
-
+                    getTransactions();
                     break;
                 case 5:
                     quit = true;
@@ -104,12 +102,11 @@ public class Console {
         }
         verifyUser();
     }
-    public void getTransactionHistory(){
-        String trans = transactionHistory.toString();
-        System.out.println(trans);
-        //return trans;
-    }
 
+    public void getTransactions(){
+        String trans = transactionHistory.toString();
+        System.out.print(trans);
+    }
 
     public void checkAcctMenu(User current) {
         boolean back = false;
@@ -126,7 +123,7 @@ public class Console {
                     System.out.println(current.checkingWithdraw(withdraw));
                     System.out.println("current balance: ");
                     System.out.println(current.getCheckingBalance());
-                    transactionHistory.append("Withdrew: " + withdraw + " from checking. " + "Remaining balance: " + current.getCheckingBalance() +"\n");
+                    transactionHistory.append("Withdrew: " + withdraw + " from checking. " + "Remaining Balance: " + current.getCheckingBalance() + "\n");
                     break;
                 case 2:
                     System.out.println("Enter amount to deposit");
@@ -136,13 +133,31 @@ public class Console {
                     current.checkingDeposit(deposit);
                     System.out.println("current balance: ");
                     System.out.println(current.getCheckingBalance());
-                    transactionHistory.append("Desposited: " + deposit + " into checking. " + "Remaining balance: " + current.getCheckingBalance() +"\n");
+                    transactionHistory.append("Deposited: " + deposit + " into checking. " + "Remaining Balance: " + current.getCheckingBalance() + "\n");
                     break;
                 case 3:
                     System.out.println(current.getCheckingBalance());
                     break;
                 case 4:
-                    //transfer to my acct
+                    System.out.println("Enter account to transfer to");
+                    Scanner type = new Scanner(System.in);
+                    String acct = type.nextLine();
+                    System.out.println("Enter amount to transfer");
+                    Scanner amt = new Scanner(System.in);
+                    double amount = amt.nextDouble();
+                    if(acct.toLowerCase().equals("savings")){
+                        current.checkingWithdraw(amount);
+                        current.savingsDeposit(amount);
+                        System.out.println("Transfer successful \nCurrent balance: "+current.getCheckingBalance());
+                }
+                    else if(acct.toLowerCase().equals("investment")){
+                        current.checkingWithdraw(amount);
+                        current.investmentDeposit(amount);
+                        System.out.println("Transfer successful \nCurrent balance: "+current.getCheckingBalance());
+                    }
+                    else{
+                        System.out.println("Incorrect input");
+                    }
                     break;
                 case 5:
                     System.out.println(current.closeCheck());
@@ -178,7 +193,7 @@ public class Console {
                         System.out.println(current.savingsWithdraw(withdraw));
                         System.out.println("current balance: ");
                         System.out.println(current.getSavingBalance());
-                        transactionHistory.append("Withdrew: " + withdraw + " from savings. " + "Remaining balance: " + current.getSavingBalance() +"\n");
+                        transactionHistory.append("Withdrew: " + withdraw + " from savings. " + "Remaining Balance: " + current.getSavingBalance() + "\n");
                         break;
                     case 2:
                         System.out.println("Enter amount to deposit");
@@ -188,13 +203,31 @@ public class Console {
                         current.savingsDeposit(deposit);
                         System.out.println("current balance: ");
                         System.out.println(current.getSavingBalance());
-                        transactionHistory.append("Deposited: " + deposit + " into savings. " + "Remaining balance: " + current.getSavingBalance() +"\n");
+                        transactionHistory.append("Deposited: " + deposit + " into savings. " + "Remaining Balance: " + current.getSavingBalance() + "\n");
                         break;
                     case 3:
                         System.out.println(current.getSavingBalance());
                         break;
                     case 4:
-                        //transfer to my acct
+                        System.out.println("Enter account to transfer to");
+                        Scanner type = new Scanner(System.in);
+                        String acct = type.nextLine();
+                        System.out.println("Enter amount to transfer");
+                        Scanner amt = new Scanner(System.in);
+                        double amount = amt.nextDouble();
+                        if(acct.toLowerCase().equals("checking")){
+                            current.savingsWithdraw(amount);
+                            current.checkingDeposit(amount);
+                            System.out.println("Transfer successful \nCurrent balance: "+current.getCheckingBalance());
+                        }
+                        else if(acct.toLowerCase().equals("investment")){
+                            current.savingsWithdraw(amount);
+                            current.investmentDeposit(amount);
+                            System.out.println("Transfer successful \nCurrent balance: "+current.getCheckingBalance());
+                        }
+                        else{
+                            System.out.println("Incorrect input");
+                        }
                         break;
                     case 5:
                         System.out.println(current.closeSaving());
@@ -232,7 +265,7 @@ public class Console {
                     System.out.println(current.investmentWithdraw(withdraw));
                     System.out.println("current balance: ");
                     System.out.println(current.getInvestmentBalance());
-                    transactionHistory.append("Withdrew: " + withdraw + " from investment. " + "Remaining balance: " + current.getInvestmentBalance() +"\n");
+                    transactionHistory.append("Withdrew: " + withdraw + " from investment. " + "Remaining Balance: " + current.getInvestmentBalance() + "\n");
                     break;
                 case 2:
                     System.out.println("Enter amount to deposit");
@@ -242,7 +275,7 @@ public class Console {
                     current.investmentDeposit(deposit);
                     System.out.println("current balance: ");
                     System.out.println(current.getInvestmentBalance());
-                    transactionHistory.append("Deposited: " + deposit + " into investment. " + "Remaining balance: " + current.getInvestmentBalance() +"\n");
+                    transactionHistory.append("Deposited: " + deposit + " into investment. " + "Remaining Balance: " + current.getInvestmentBalance() + "\n");
                     break;
                 case 3:
                     System.out.println(current.getInvestmentBalance());
@@ -251,7 +284,7 @@ public class Console {
                     //transfer to my acct
                     break;
                 case 5:
-                    //close account
+                    System.out.println(current.closeInvestment());
                     break;
                 case 6:
                     //transfer to outside acct
