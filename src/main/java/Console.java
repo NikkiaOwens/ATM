@@ -197,7 +197,25 @@ public class Console {
                         System.out.println(current.getSavingBalance());
                         break;
                     case 4:
-                        //transfer to my acct
+                        System.out.println("Enter account to transfer to");
+                        Scanner type = new Scanner(System.in);
+                        String acct = type.nextLine();
+                        System.out.println("Enter amount to transfer");
+                        Scanner amt = new Scanner(System.in);
+                        double amount = amt.nextDouble();
+                        if(acct.toLowerCase().equals("checking")){
+                            current.savingsWithdraw(amount);
+                            current.checkingDeposit(amount);
+                            System.out.println("Transfer successful \nCurrent balance: "+current.getCheckingBalance());
+                        }
+                        else if(acct.toLowerCase().equals("investment")){
+                            current.savingsWithdraw(amount);
+                            current.investmentDeposit(amount);
+                            System.out.println("Transfer successful \nCurrent balance: "+current.getCheckingBalance());
+                        }
+                        else{
+                            System.out.println("Incorrect input");
+                        }
                         break;
                     case 5:
                         System.out.println(current.closeSaving());
