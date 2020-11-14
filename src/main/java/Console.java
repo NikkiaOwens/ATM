@@ -15,7 +15,6 @@ public class Console {
             case 1:
                 accountSelectionMenu();
                 //v.verifyUserCheck();
-                //verifyUser();
                 break;
             case 2:
                 //v.createUser();
@@ -23,6 +22,7 @@ public class Console {
                 break;
             default:
                 System.out.println("Incorrect input");
+                verifyUser();
                 break;
         }
     }
