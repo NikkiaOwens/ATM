@@ -1,4 +1,5 @@
 import com.sun.deploy.net.MessageHeader;
+import sun.management.snmp.jvmmib.JVM_MANAGEMENT_MIBOidTable;
 
 public class Account {
     public Integer accountNumber;
@@ -20,5 +21,17 @@ public class Account {
 
     public Double getBalance() {
         return balance;
+    }
+
+    public void deposit(Double amount){
+        this.balance += amount;
+        String bal = String.format("%.2f",this.balance);
+        this.balance = Double.parseDouble(bal);
+
+        public void withdraw(Double amount){
+            if (this.balance > amount){
+                this.balance -= amount;
+            }
+        }
     }
 }
