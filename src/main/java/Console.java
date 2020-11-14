@@ -129,7 +129,7 @@ public class Console {
                     //transfer to my acct
                     break;
                 case 5:
-                    //close account
+                    System.out.println(current.closeCheck());
                     break;
                 case 6:
                     //transfer to outside acct

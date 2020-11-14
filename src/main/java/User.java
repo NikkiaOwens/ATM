@@ -42,6 +42,15 @@ public class User {
     public String toString() {
         return "User name: " + this.name + "\nUser pin: " + this.pin;
     }
+
+    public String closeCheck(){
+       if(checking.getBalance() == 0){
+           return "Account successfully closed";
+       }
+       else {
+           return "Please withdraw all funds from your account before closing";
+       }
+    }
 }
 //}
 //public void name(String name) {
