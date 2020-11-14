@@ -4,7 +4,7 @@ import java.util.Scanner;
 public class Console {
 
 
-    //public void () {
+
     UserWarehouse UW = new UserWarehouse();
     HashMap<String, Integer> userList = UW.getAccounts();
     HashMap<String, User> objList = UW.getObjectList();
@@ -114,7 +114,7 @@ public class Console {
                     System.out.println(current.checkingWithdraw(withdraw));
                     System.out.println("current balance: ");
                     System.out.println(current.getCheckingBalance());
-                    list.add("Withdrew: " + withdraw + "Remaining balance: " + current.getCheckingBalance() +"\n");
+
                     break;
                 case 2:
                     System.out.println("Enter amount to deposit");
@@ -129,7 +129,25 @@ public class Console {
                     System.out.println(current.getCheckingBalance());
                     break;
                 case 4:
-                    //transfer to my acct
+                    System.out.println("Enter account to transfer to");
+                    Scanner type = new Scanner(System.in);
+                    String acct = type.nextLine();
+                    System.out.println("Enter amount to transfer");
+                    Scanner amt = new Scanner(System.in);
+                    double amount = amt.nextDouble();
+                    if(acct.toLowerCase().equals("savings")){
+                        current.checkingWithdraw(amount);
+                        current.savingsDeposit(amount);
+                        System.out.println("Transfer successful \nCurrent balance: "+current.getCheckingBalance());
+                }
+                    else if(acct.toLowerCase().equals("investment")){
+                        current.checkingWithdraw(amount);
+                        current.investmentDeposit(amount);
+                        System.out.println("Transfer successful \nCurrent balance: "+current.getCheckingBalance());
+                    }
+                    else{
+                        System.out.println("Incorrect input");
+                    }
                     break;
                 case 5:
                     System.out.println(current.closeCheck());
@@ -234,7 +252,7 @@ public class Console {
                     //transfer to my acct
                     break;
                 case 5:
-                    //close account
+                    System.out.println(current.closeInvestment());
                     break;
                 case 6:
                     //transfer to outside acct
