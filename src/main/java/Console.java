@@ -1,7 +1,7 @@
 public class Console {
 
-    public void () {
+    //public void () {
 
 
-    }
+    //}
 }
