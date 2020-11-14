@@ -6,8 +6,8 @@ public class Console {
 
     //public void () {
     UserWarehouse UW = new UserWarehouse();
-    HashMap<String,Integer> userList = UW.getAccounts();
-    HashMap<String,User> objList = UW.getObjectList();
+    HashMap<String, Integer> userList = UW.getAccounts();
+    HashMap<String, User> objList = UW.getObjectList();
     Menu menu = new Menu();
 
     public Console() {
@@ -16,9 +16,9 @@ public class Console {
     public void verifyUser() {
         boolean exit = false;
         while (exit == false) {
-        menu.verifyExistingUser();
-        Scanner option = new Scanner(System.in);
-        int selection = option.nextInt();
+            menu.verifyExistingUser();
+            Scanner option = new Scanner(System.in);
+            int selection = option.nextInt();
             switch (selection) {
                 case 1:
                     verifyUserCheck();
@@ -36,7 +36,8 @@ public class Console {
             }
         }
     }
-    public void createUser(){
+
+    public void createUser() {
         System.out.println("Please enter full name");
         Scanner name = new Scanner(System.in);
         String fullName = name.nextLine();
@@ -67,10 +68,10 @@ public class Console {
     public void accountSelectionMenu(User currentUser) {
         boolean quit = false;
         while (quit == false) {
-        User current = currentUser;
-        menu.accountSelection();
-        Scanner option = new Scanner(System.in);
-        int selection = option.nextInt();
+            User current = currentUser;
+            menu.accountSelection();
+            Scanner option = new Scanner(System.in);
+            int selection = option.nextInt();
             switch (selection) {
                 case 1:
                     System.out.println("Checking");
@@ -97,6 +98,7 @@ public class Console {
         }
         verifyUser();
     }
+
     public void checkAcctMenu(User current) {
         boolean back = false;
         while (back == false) {
@@ -145,14 +147,15 @@ public class Console {
 
         }
     }
-        public void savingsAcctMenu(User current) {
-            boolean back = false;
-            while (back == false) {
-                menu.acctMenu();
-                Scanner option = new Scanner(System.in);
-                int selection = option.nextInt();
-                switch (selection) {
-                    case 1:
+
+    public void savingsAcctMenu(User current) {
+        boolean back = false;
+        while (back == false) {
+            menu.acctMenu();
+            Scanner option = new Scanner(System.in);
+            int selection = option.nextInt();
+            switch (selection) {
+                case 1:
                      /*   System.out.println("Enter amount to withdraw");
                         Scanner withD = new Scanner(System.in);
                         double withdraw = withD.nextDouble();
@@ -161,7 +164,7 @@ public class Console {
                         System.out.println("current balance: ");
                         System.out.println(current.getCheckingBalance());
                         break; */
-                    case 2:
+                case 2:
                        /* System.out.println("Enter amount to deposit");
                         Scanner depos = new Scanner(System.in);
                         double deposit = depos.nextDouble();
@@ -170,29 +173,77 @@ public class Console {
                         System.out.println("current balance: ");
                         System.out.println(current.getCheckingBalance());
                         break; */
-                    case 3:
-                        System.out.println(current.getSavingBalance());
-                        break;
-                    case 4:
-                        //transfer to my acct
-                        break;
-                    case 5:
-                        //close account
-                        break;
-                    case 6:
-                        //transfer to outside acct
-                        break;
-                    case 7:
-                        back = true;
-                        break;
-                    default:
-                        System.out.println("Incorrect input");
-                        break;
-
-                }
+                case 3:
+                    System.out.println(current.getSavingBalance());
+                    break;
+                case 4:
+                    //transfer to my acct
+                    break;
+                case 5:
+                    //close account
+                    break;
+                case 6:
+                    //transfer to outside acct
+                    break;
+                case 7:
+                    back = true;
+                    break;
+                default:
+                    System.out.println("Incorrect input");
+                    break;
 
             }
 
         }
+
+    }
+
+    public void investmentAcctMenu(User current) {
+        boolean back = false;
+        while (back == false) {
+            menu.acctMenu();
+            Scanner option = new Scanner(System.in);
+            int selection = option.nextInt();
+            switch (selection) {
+                case 1:
+                    System.out.println("Enter amount to withdraw");
+                    Scanner withD = new Scanner(System.in);
+                    double withdraw = withD.nextDouble();
+                    System.out.println("You withdrew: ");
+                    System.out.println(current.investmentWithdraw(withdraw));
+                    System.out.println("current balance: ");
+                    System.out.println(current.getInvestmentBalance());
+                    break;
+                case 2:
+                    System.out.println("Enter amount to deposit");
+                    Scanner depos = new Scanner(System.in);
+                    double deposit = depos.nextDouble();
+                    System.out.println("You deposited: ");
+                    current.investmentDeposit(deposit);
+                    System.out.println("current balance: ");
+                    System.out.println(current.getInvestmentBalance());
+                    break;
+                case 3:
+                    System.out.println(current.getInvestmentBalance());
+                    break;
+                case 4:
+                    //transfer to my acct
+                    break;
+                case 5:
+                    //close account
+                    break;
+                case 6:
+                    //transfer to outside acct
+                    break;
+                case 7:
+                    back = true;
+                    break;
+                default:
+                    System.out.println("Incorrect input");
+                    break;
+
+            }
+        }
+    }
 }
 

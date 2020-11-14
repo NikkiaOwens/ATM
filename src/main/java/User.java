@@ -35,9 +35,20 @@ public class User {
         return savings.removeBalance(withdraw);
     }
 
+    /**
+     *
+     * investment methods
+     */
     public Double getInvestmentBalance() {
         return investment.getBalance();
     }
+    public double investmentWithdraw(double withdraw){
+        return investment.removeBalance(withdraw);
+    }
+    public void investmentDeposit(double deposit){
+        investment.setBalance(deposit);
+    }
+
 
     public String toString() {
         return "User name: " + this.name + "\nUser pin: " + this.pin;
