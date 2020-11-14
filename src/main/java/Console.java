@@ -1,3 +1,4 @@
+import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.Scanner;
 
@@ -9,6 +10,8 @@ public class Console {
     HashMap<String, Integer> userList = UW.getAccounts();
     HashMap<String, User> objList = UW.getObjectList();
     Menu menu = new Menu();
+    //ArrayList<String> transactionHistory= new ArrayList<String>();
+    StringBuilder transactionHistory = new StringBuilder();
 
     public Console() {
     }
@@ -87,6 +90,9 @@ public class Console {
                     break;
                 case 4:
                     //print transaction history
+                    System.out.println("Transaction History");
+                    getTransactionHistory();
+
                     break;
                 case 5:
                     quit = true;
@@ -98,6 +104,12 @@ public class Console {
         }
         verifyUser();
     }
+    public void getTransactionHistory(){
+        String trans = transactionHistory.toString();
+        System.out.println(trans);
+        //return trans;
+    }
+
 
     public void checkAcctMenu(User current) {
         boolean back = false;
@@ -114,7 +126,7 @@ public class Console {
                     System.out.println(current.checkingWithdraw(withdraw));
                     System.out.println("current balance: ");
                     System.out.println(current.getCheckingBalance());
-                    list.add("Withdrew: " + withdraw + "Remaining balance: " + current.getCheckingBalance() +"\n");
+                    transactionHistory.append("Withdrew: " + withdraw + " from checking. " + "Remaining balance: " + current.getCheckingBalance() +"\n");
                     break;
                 case 2:
                     System.out.println("Enter amount to deposit");
@@ -124,6 +136,7 @@ public class Console {
                     current.checkingDeposit(deposit);
                     System.out.println("current balance: ");
                     System.out.println(current.getCheckingBalance());
+                    transactionHistory.append("Desposited: " + deposit + " into checking. " + "Remaining balance: " + current.getCheckingBalance() +"\n");
                     break;
                 case 3:
                     System.out.println(current.getCheckingBalance());
@@ -165,6 +178,7 @@ public class Console {
                         System.out.println(current.savingsWithdraw(withdraw));
                         System.out.println("current balance: ");
                         System.out.println(current.getSavingBalance());
+                        transactionHistory.append("Withdrew: " + withdraw + " from savings. " + "Remaining balance: " + current.getSavingBalance() +"\n");
                         break;
                     case 2:
                         System.out.println("Enter amount to deposit");
@@ -174,6 +188,7 @@ public class Console {
                         current.savingsDeposit(deposit);
                         System.out.println("current balance: ");
                         System.out.println(current.getSavingBalance());
+                        transactionHistory.append("Deposited: " + deposit + " into savings. " + "Remaining balance: " + current.getSavingBalance() +"\n");
                         break;
                     case 3:
                         System.out.println(current.getSavingBalance());
@@ -217,6 +232,7 @@ public class Console {
                     System.out.println(current.investmentWithdraw(withdraw));
                     System.out.println("current balance: ");
                     System.out.println(current.getInvestmentBalance());
+                    transactionHistory.append("Withdrew: " + withdraw + " from investment. " + "Remaining balance: " + current.getInvestmentBalance() +"\n");
                     break;
                 case 2:
                     System.out.println("Enter amount to deposit");
@@ -226,6 +242,7 @@ public class Console {
                     current.investmentDeposit(deposit);
                     System.out.println("current balance: ");
                     System.out.println(current.getInvestmentBalance());
+                    transactionHistory.append("Deposited: " + deposit + " into investment. " + "Remaining balance: " + current.getInvestmentBalance() +"\n");
                     break;
                 case 3:
                     System.out.println(current.getInvestmentBalance());
