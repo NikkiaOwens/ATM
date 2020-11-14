@@ -153,23 +153,23 @@ public class Console {
                 int selection = option.nextInt();
                 switch (selection) {
                     case 1:
-                     /*   System.out.println("Enter amount to withdraw");
+                        System.out.println("Enter amount to withdraw");
                         Scanner withD = new Scanner(System.in);
                         double withdraw = withD.nextDouble();
                         System.out.println("You withdrew: ");
-                        System.out.println(current.checkingWithdraw(withdraw));
+                        System.out.println(current.savingsWithdraw(withdraw));
                         System.out.println("current balance: ");
-                        System.out.println(current.getCheckingBalance());
-                        break; */
+                        System.out.println(current.getSavingBalance());
+                        break;
                     case 2:
-                       /* System.out.println("Enter amount to deposit");
+                       System.out.println("Enter amount to deposit");
                         Scanner depos = new Scanner(System.in);
                         double deposit = depos.nextDouble();
                         System.out.println("You deposited: ");
-                        current.checkingDeposit(deposit);
+                        current.savingsDeposit(deposit);
                         System.out.println("current balance: ");
-                        System.out.println(current.getCheckingBalance());
-                        break; */
+                        System.out.println(current.getSavingBalance());
+                        break;
                     case 3:
                         System.out.println(current.getSavingBalance());
                         break;
