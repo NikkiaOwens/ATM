@@ -35,14 +35,39 @@ public class User {
         return savings.removeBalance(withdraw);
     }
 
+    public void savingsDeposit(double deposit) { savings.setBalance(deposit);}
+
+
+    /**
+     *
+     * investment methods
+     */
+
     public void savingsDeposit(double deposit){ savings.setBalance(deposit);}
+
 
     public Double getInvestmentBalance() {
         return investment.getBalance();
     }
+    public double investmentWithdraw(double withdraw){
+        return investment.removeBalance(withdraw);
+    }
+    public void investmentDeposit(double deposit){
+        investment.setBalance(deposit);
+    }
+
 
     public String toString() {
         return "User name: " + this.name + "\nUser pin: " + this.pin;
+    }
+
+    public String closeCheck(){
+       if(checking.getBalance() == 0){
+           return "Account successfully closed";
+       }
+       else {
+           return "Please withdraw all funds from your account before closing";
+       }
     }
 }
 //}

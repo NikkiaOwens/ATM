@@ -28,8 +28,21 @@ public class UserWarehouse {
 
         return user;
     }
+
+    public void deleteUser(String name) {
+        accounts.remove(name);
+    }
+    /**
+     * Transaction ideas:
+     * every time a transaction happens, need to
+     * increase trasaction array size by 1.
+     * Then every transaction need to store what happened into that
+     * same array
+     */
+
     public HashMap<String,User> getObjectList(){
         return this.objectList;
     }
+
 }
 
