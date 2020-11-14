@@ -8,7 +8,7 @@ import static org.junit.Assert.assertEquals;
 
 // Test the expected Account class from ATM.
 public class AccountTest {
-/*
+
     @Test
     public void testA0() {
         Account a = new Account(0.0);
@@ -79,5 +79,5 @@ public class AccountTest {
         assertEquals(0.0, b.balance(), 0.0001);
     }
 
- */
+
 }

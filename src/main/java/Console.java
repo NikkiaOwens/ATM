@@ -148,6 +148,7 @@ public class Console {
         }
     }
 
+
     public void savingsAcctMenu(User current) {
         boolean back = false;
         while (back == false) {
@@ -156,47 +157,94 @@ public class Console {
             int selection = option.nextInt();
             switch (selection) {
                 case 1:
-                     /*   System.out.println("Enter amount to withdraw");
-                        Scanner withD = new Scanner(System.in);
-                        double withdraw = withD.nextDouble();
-                        System.out.println("You withdrew: ");
-                        System.out.println(current.checkingWithdraw(withdraw));
-                        System.out.println("current balance: ");
-                        System.out.println(current.getCheckingBalance());
-                        break; */
-                case 2:
-                       /* System.out.println("Enter amount to deposit");
-                        Scanner depos = new Scanner(System.in);
-                        double deposit = depos.nextDouble();
-                        System.out.println("You deposited: ");
-                        current.checkingDeposit(deposit);
-                        System.out.println("current balance: ");
-                        System.out.println(current.getCheckingBalance());
-                        break; */
-                case 3:
-                    System.out.println(current.getSavingBalance());
-                    break;
-                case 4:
-                    //transfer to my acct
-                    break;
-                case 5:
-                    //close account
-                    break;
-                case 6:
-                    //transfer to outside acct
-                    break;
-                case 7:
-                    back = true;
-                    break;
-                default:
-                    System.out.println("Incorrect input");
-                    break;
-
             }
-
         }
-
     }
+//                     /*   System.out.println("Enter amount to withdraw");
+//
+//        public void savingsAcctMenu(User current) {
+//            boolean back = false;
+//            while (back == false) {
+//                menu.acctMenu();
+//                Scanner option = new Scanner(System.in);
+//                int selection = option.nextInt();
+//                switch (selection) {
+//                    case 1:
+//                        System.out.println("Enter amount to withdraw");
+//
+//                        Scanner withD = new Scanner(System.in);
+//                        double withdraw = withD.nextDouble();
+//                        System.out.println("You withdrew: ");
+//                        System.out.println(current.savingsWithdraw(withdraw));
+//                        System.out.println("current balance: ");
+//
+//                        System.out.println(current.getCheckingBalance());
+//                        break; */
+//                case 2:
+//                       /* System.out.println("Enter amount to deposit");
+//
+//                        System.out.println(current.getSavingBalance());
+//                        break;
+//                    case 2:
+//                       System.out.println("Enter amount to deposit");
+//
+//                        Scanner depos = new Scanner(System.in);
+//                        double deposit = depos.nextDouble();
+//                        System.out.println("You deposited: ");
+//                        current.savingsDeposit(deposit);
+//                        System.out.println("current balance: ");
+//
+//                        System.out.println(current.getCheckingBalance());
+//                        break; */
+//                case 3:
+//                    System.out.println(current.getSavingBalance());
+//                    break;
+//                case 4:
+//                    //transfer to my acct
+//                    break;
+//                case 5:
+//                    //close account
+//                    break;
+//                case 6:
+//                    //transfer to outside acct
+//                    break;
+//                case 7:
+//                    back = true;
+//                    break;
+//                default:
+//                    System.out.println("Incorrect input");
+//                    break;
+//
+//                        System.out.println(current.getSavingBalance());
+//                        break;
+//                    case 3:
+//                        System.out.println(current.getSavingBalance());
+//                        break;
+//                    case 4:
+//                        //transfer to my acct
+//                        break;
+//                    case 5:
+//                        //close account
+//                        break;
+//                    case 6:
+//                        //transfer to outside acct
+//                        break;
+//                    case 7:
+//                        back = true;
+//                        break;
+//                    default:
+//                        System.out.println("Incorrect input");
+//                        break;
+//
+//                }
+//
+//                */
+//
+//
+//            }
+//
+//        }
+
 
     public void investmentAcctMenu(User current) {
         boolean back = false;
