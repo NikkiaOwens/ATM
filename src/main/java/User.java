@@ -6,13 +6,31 @@ public class User {
     public static Checking checking = new Checking();
     public static Saving savings = new Saving();
     public static Investment investment = new Investment();
-    // private String name;
-    // private Integer pin;
-
+    private boolean hasCheck = false;
+    private boolean hasSavings = false;
+    private boolean hasInvestment = false;
     public User(String name, Integer pin) {
         this.name = name;
         this.pin = pin;
 
+    }
+    public void setHasChecking(boolean b){
+        this.hasCheck = b;
+    }
+    public boolean getHasChecking(){
+        return this.hasCheck;
+    }
+    public void setHasSavings(boolean b){
+        this.hasSavings = b;
+    }
+    public boolean getHasSavings(){
+        return this.hasSavings;
+    }
+    public void setHasInvestment(boolean b){
+        this.hasInvestment = b;
+    }
+    public boolean getHasInvestment(){
+        return this.hasInvestment;
     }
 
     public User() {
