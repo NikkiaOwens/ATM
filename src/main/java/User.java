@@ -3,9 +3,9 @@ import java.util.HashMap;
 public class User {
     public static Integer pin;
     public static String name;
-    public static Double savingsBalance = 0.0;
-    public static Double investmentBalance = 0.0;
-    public static Double checkingBalance = 0.0;
+    public static Checking checking = new Checking();
+    public static Saving savings = new Saving();
+    public static Investment investment = new Investment();
     // private String name;
     // private Integer pin;
 
@@ -15,15 +15,14 @@ public class User {
     }
     public User(){}
 
-    public Double getBalance(){
-        return investmentBalance;
-    }
     public Double getCheckingBalance(){
-        return checkingBalance;
+        return checking.getBalance();
     }
-
-    public Double getSavingsBalance(){
-        return savingsBalance;
+    public Double getSavingBalance(){
+        return savings.getBalance();
+    }
+    public Double getInvestmentBalance(){
+        return investment.getBalance();
     }
 }
 //}

@@ -40,7 +40,7 @@ public class Console {
             switch (selection) {
                 case 1:
                     System.out.println("Checking");
-                    acctMenu();
+                    checkAcctMenu();
                     break;
                 case 2:
                     System.out.println("Savings");
@@ -63,7 +63,8 @@ public class Console {
         }
         verifyUser();
     }
-    public void acctMenu(){
+    public void checkAcctMenu(){
+
         menu.acctMenu();
         Scanner option = new Scanner(System.in);
         int selection = option.nextInt();
@@ -71,7 +72,7 @@ public class Console {
         while (back == false){
             switch(selection){
                 case 1:
-                    //withdraw
+
                     break;
                 case 2:
                     //deposit
