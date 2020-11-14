@@ -5,7 +5,7 @@ public class UserVerification {
      *
      * this will tie into the hash map of user names and passwords
      */
-/*
+UserWarehouse uw =new UserWarehouse();
 Console console = new Console();
 public UserVerification(){
 
@@ -43,5 +43,5 @@ public UserVerification(){
     String password = pass.nextLine();
     //check password is a number then push name and password to the hash map
         System.out.println("Name and password are set");
-    } */
+    }
 }

@@ -23,15 +23,15 @@ public class Account {
         return balance;
     }
 
-    public void deposit(Double amount){
+    public void deposit(Double amount) {
         this.balance += amount;
-        String bal = String.format("%.2f",this.balance);
+        String bal = String.format("%.2f", this.balance);
         this.balance = Double.parseDouble(bal);
-
+    }
         public void withdraw(Double amount){
             if (this.balance > amount){
                 this.balance -= amount;
             }
         }
     }
-}
+
