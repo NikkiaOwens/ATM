@@ -181,7 +181,7 @@ public class Console {
                         //transfer to my acct
                         break;
                     case 5:
-                        //close account
+                        System.out.println(current.closeSaving());
                         break;
                     case 6:
                         //transfer to outside acct

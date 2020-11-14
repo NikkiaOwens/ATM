@@ -67,6 +67,22 @@ public class User {
            return "Please withdraw all funds from your account before closing";
        }
     }
+    public String closeSaving(){
+        if(checking.getBalance() == 0){
+            return "Account successfully closed";
+        }
+        else {
+            return "Please withdraw all funds from your account before closing";
+        }
+    }
+    public String closeInvestment(){
+        if(checking.getBalance() == 0){
+            return "Account successfully closed";
+        }
+        else {
+            return "Please withdraw all funds from your account before closing";
+        }
+    }
 }
 //}
 //public void name(String name) {
