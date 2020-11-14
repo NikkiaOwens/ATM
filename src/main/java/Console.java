@@ -105,8 +105,13 @@ public class Console {
         int selection = option.nextInt();
             switch(selection){
                 case 1:
-
-                    //withdraw
+                    System.out.println("Enter ammount to withdraw");
+                    Scanner withD = new Scanner(System.in);
+                    double withdraw = withD.nextDouble();
+                    System.out.println("You withdrew: ");
+                    System.out.println(current.checkingWithdraw(withdraw));
+                    System.out.println("current balance: ");
+                    System.out.println(current.getCheckingBalance());
                     break;
                 case 2:
                     //deposit
@@ -129,7 +134,6 @@ public class Console {
                 default:
                     System.out.println("Incorrect input");
                     break;
-
 
             }
 

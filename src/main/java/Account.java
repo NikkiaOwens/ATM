@@ -15,10 +15,13 @@ public abstract class Account {
             this.balance += deposit;
         }
     }
-        public void removeBalance(Double amount){
+        public double removeBalance(Double amount){
             if (this.balance > amount){
-                this.balance -= amount;
+                double newAmt = this.balance - amount;
+                this.balance = newAmt;
+                return amount;
             }
+            return -1;
         }
     }
 

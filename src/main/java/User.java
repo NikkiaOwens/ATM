@@ -17,9 +17,11 @@ public class User {
 
     public User() {
     }
-
     public Double getCheckingBalance() {
         return checking.getBalance();
+    }
+    public double checkingWithdraw(double withdraw){
+        return checking.removeBalance(withdraw);
     }
 
     public Double getSavingBalance() {
