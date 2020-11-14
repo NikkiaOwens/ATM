@@ -1,40 +1,21 @@
 import com.sun.deploy.net.MessageHeader;
 import sun.management.snmp.jvmmib.JVM_MANAGEMENT_MIBOidTable;
 
-public class Account {
-    public Integer accountNumber;
-    public Integer ownerID;
-    public Double balance;
-
+public abstract class Account {
+    private double balance = 0.0;
     public Account(){
-        this.accountNumber = 1;
-        this.ownerID = 1;
-        this.balance = 0.0;
     }
 
-    public Account(Double balance, Integer ownerID, Integer accountNumber){
-        this.balance = balance;
-        this.accountNumber = accountNumber;
-        this.ownerID = ownerID;
-    }
-    public Integer getAccountNumber() {
-        return accountNumber;
+    public double getBalance() {
+        return this.balance;
     }
 
-    public Integer getOwnerID() {
-        return ownerID;
+    public void setBalance(double deposit) {
+        if(deposit > 0) {
+            this.balance += deposit;
+        }
     }
-
-    public Double getBalance() {
-        return balance;
-    }
-
-    public void deposit(Double amount) {
-        this.balance += amount;
-        String bal = String.format("%.2f", this.balance);
-        this.balance = Double.parseDouble(bal);
-    }
-        public void withdraw(Double amount){
+        public void removeBalance(Double amount){
             if (this.balance > amount){
                 this.balance -= amount;
             }

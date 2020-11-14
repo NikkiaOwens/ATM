@@ -1,54 +1,88 @@
+import java.util.HashMap;
 import java.util.Scanner;
 
 public class Console {
 
 
     //public void () {
-
+    UserWarehouse UW = new UserWarehouse();
+    HashMap<String,Integer> userList = UW.getAccounts();
+    HashMap<String,User> objList = UW.getObjectList();
     Menu menu = new Menu();
-    UserVerification v = new UserVerification();
+
     public Console() {
     }
 
     public void verifyUser() {
+        boolean exit = false;
+        while (exit == false) {
         menu.verifyExistingUser();
         Scanner option = new Scanner(System.in);
         int selection = option.nextInt();
-        switch (selection) {
-            case 1:
-                accountSelectionMenu();
-                //v.verifyUserCheck();
-                break;
-            case 2:
-                //v.createUser();
-                //verifyUser();
-                break;
-            default:
-                System.out.println("Incorrect input");
-                verifyUser();
-                break;
+            switch (selection) {
+                case 1:
+                    verifyUserCheck();
+                    break;
+                case 2:
+                    createUser();
+                    break;
+                case 3:
+                    exit = true;
+                    break;
+                default:
+                    System.out.println("Incorrect input");
+                    //verifyUser();
+                    break;
+            }
+        }
+    }
+    public void createUser(){
+        System.out.println("Please enter full name");
+        Scanner name = new Scanner(System.in);
+        String fullName = name.nextLine();
+        User newUser = UW.createNewUser(fullName);
+        System.out.println(newUser.toString());
+    }
+
+    public void verifyUserCheck() {
+        System.out.println("Enter full name");
+        Scanner name = new Scanner(System.in);
+        String fullName = name.nextLine();
+        if (userList.containsKey(fullName)) {
+            System.out.println("Enter password");
+            Scanner pass = new Scanner(System.in);
+            Integer password = pass.nextInt();
+            if (userList.get(fullName).equals(password)) {
+                accountSelectionMenu(objList.get(fullName));
+            } else {
+                System.out.println("Incorrect password");
+                verifyUserCheck();
+            }
+        } else {
+            System.out.println("Incorrect user name");
+            verifyUserCheck();
         }
     }
 
-
-    public void accountSelectionMenu() {
+    public void accountSelectionMenu(User currentUser) {
+        boolean quit = false;
+        while (quit == false) {
+        User current = currentUser;
         menu.accountSelection();
         Scanner option = new Scanner(System.in);
         int selection = option.nextInt();
-        boolean quit = false;
-        while (quit == false) {
             switch (selection) {
                 case 1:
                     System.out.println("Checking");
-                    checkAcctMenu();
+                    checkAcctMenu(current);
                     break;
                 case 2:
                     System.out.println("Savings");
-                    acctMenu();
+                    //acctMenu();
                     break;
                 case 3:
                     System.out.println("Investment");
-                    acctMenu();
+                    //acctMenu();
                     break;
                 case 4:
                     //print transaction history
@@ -63,22 +97,22 @@ public class Console {
         }
         verifyUser();
     }
-    public void checkAcctMenu(){
-
+    public void checkAcctMenu(User current){
+        boolean back = false;
+        while (back == false){
         menu.acctMenu();
         Scanner option = new Scanner(System.in);
         int selection = option.nextInt();
-        boolean back = false;
-        while (back == false){
             switch(selection){
                 case 1:
 
+                    //withdraw
                     break;
                 case 2:
                     //deposit
                     break;
                 case 3:
-                    //check balance
+                    System.out.println(current.getCheckingBalance());
                     break;
                 case 4:
                     //transfer to my acct
@@ -99,12 +133,8 @@ public class Console {
 
             }
 
-
-    //}
-
-
         }
-        accountSelectionMenu();
+
     }
 }
 
