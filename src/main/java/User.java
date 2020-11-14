@@ -17,13 +17,22 @@ public class User {
 
     public User() {
     }
-
     public Double getCheckingBalance() {
         return checking.getBalance();
+    }
+    public double checkingWithdraw(double withdraw){
+        return checking.removeBalance(withdraw);
+    }
+    public void checkingDeposit(double deposit){
+        checking.setBalance(deposit);
     }
 
     public Double getSavingBalance() {
         return savings.getBalance();
+    }
+
+    public double savingsWithdraw(double withdraw){
+        return savings.removeBalance(withdraw);
     }
 
     public Double getInvestmentBalance() {
