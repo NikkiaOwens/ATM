@@ -13,16 +13,17 @@ public class Console {
         int selection = option.nextInt();
         switch (selection) {
             case 1:
-                v.verifyUserCheck();
-                verifyUser();
+                accountSelectionMenu();
+                //v.verifyUserCheck();
+                //verifyUser();
                 break;
             case 2:
-                v.createUser();
-                verifyUser();
+                //v.createUser();
+                //verifyUser();
                 break;
             default:
                 System.out.println("Incorrect input");
-                verifyUser();
+                break;
         }
     }
 

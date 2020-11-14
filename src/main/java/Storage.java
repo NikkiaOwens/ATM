@@ -1,6 +1,6 @@
 public interface Storage {
 
-    default String[] toStringArray() {
+  /*  default String[] toStringArray() {
         if (this instanceof Account) {
 
             String accountType;
@@ -29,5 +29,5 @@ public interface Storage {
         } else {
             return null;
         }
-    }
+    } */
 }
