@@ -31,7 +31,6 @@ public class Console {
                     break;
                 default:
                     System.out.println("Incorrect input");
-                    //verifyUser();
                     break;
             }
         }
@@ -83,7 +82,7 @@ public class Console {
                     break;
                 case 3:
                     System.out.println("Investment");
-                    //acctMenu();
+                    investmentAcctMenu(current);
                     break;
                 case 4:
                     //print transaction history
@@ -139,7 +138,7 @@ public class Console {
                         current.checkingWithdraw(amount);
                         current.savingsDeposit(amount);
                         System.out.println("Transfer successful \nCurrent balance: "+current.getCheckingBalance());
-                }
+                     }
                     else if(acct.toLowerCase().equals("investment")){
                         current.checkingWithdraw(amount);
                         current.investmentDeposit(amount);
