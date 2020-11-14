@@ -12,17 +12,26 @@ public class User {
     public User(String name, Integer pin) {
         this.name = name;
         this.pin = pin;
-    }
-    public User(){}
 
-    public Double getCheckingBalance(){
+    }
+
+    public User() {
+    }
+
+    public Double getCheckingBalance() {
         return checking.getBalance();
     }
-    public Double getSavingBalance(){
+
+    public Double getSavingBalance() {
         return savings.getBalance();
     }
-    public Double getInvestmentBalance(){
+
+    public Double getInvestmentBalance() {
         return investment.getBalance();
+    }
+
+    public String toString() {
+        return "User name: " + this.name + "\nUser pin: " + this.pin;
     }
 }
 //}
