@@ -43,7 +43,6 @@ public class User {
      * investment methods
      */
 
-    public void savingsDeposit(double deposit){ savings.setBalance(deposit);}
 
 
     public Double getInvestmentBalance() {
