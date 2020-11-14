@@ -157,7 +157,9 @@ public class Console {
                         }
                         break;
                     case 5:
+                        current.setHasChecking(false);
                         System.out.println(current.closeCheck());
+                        accountSelectionMenu(current);
                         break;
                     case 6:
                         back = true;
@@ -237,7 +239,9 @@ public class Console {
                         }
                         break;
                     case 5:
+                        current.setHasSavings(false);
                         System.out.println(current.closeSaving());
+                        accountSelectionMenu(current);
                         break;
                     case 6:
                         back = true;
@@ -320,7 +324,9 @@ public class Console {
                         }
                         break;
                     case 5:
+                        current.setHasInvestment(false);
                         System.out.println(current.closeInvestment());
+                        accountSelectionMenu(current);
                         break;
                     case 6:
                         back = true;
