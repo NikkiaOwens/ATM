@@ -50,10 +50,12 @@ public class InvestmentMenu {
                                     current.investmentWithdraw(amount);
                                     current.checkingDeposit(amount);
                                     System.out.println("Transfer successful \nCurrent balance: " + current.getInvestmentBalance());
+                                    setTransactionHistory("Transferred to checking "+amount + "Current balance: "+current.getInvestmentBalance());
                                 } else if (acct.toLowerCase().equals("savings") && current.getHasSavings() == true) {
                                     current.investmentWithdraw(amount);
                                     current.savingsDeposit(amount);
                                     System.out.println("Transfer successful \nCurrent balance: " + current.getInvestmentBalance());
+                                    setTransactionHistory("Transferred to savings "+amount + "Current balance: "+current.getInvestmentBalance());
                                 } else {
                                     System.out.println("Account not found. Please create account before transfer.");
                                 }

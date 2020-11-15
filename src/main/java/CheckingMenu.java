@@ -48,10 +48,12 @@ public class CheckingMenu {
                                 current.checkingWithdraw(amount);
                                 current.savingsDeposit(amount);
                                 System.out.println("Transfer successful \nCurrent balance: " + current.getCheckingBalance());
+                                setTransactionHistory("Transferred to savings "+amount + "Current balance: "+current.getCheckingBalance());
                             } else if (acct.toLowerCase().equals("investment") && current.getHasInvestment() == true) {
                                 current.checkingWithdraw(amount);
                                 current.investmentDeposit(amount);
                                 System.out.println("Transfer successful \nCurrent balance: " + current.getCheckingBalance());
+                                setTransactionHistory("Transferred to investment "+amount + "Current balance: "+current.getCheckingBalance());
                             } else {
                                 System.out.println("Account not found. Please create account before transfer.");
                             }
