@@ -36,7 +36,7 @@ public class Console {
                         break;
                 }
             }
-            System.out.println("Incorrect input");
+            else{System.out.println("Incorrect input");}
         }
     }
 
@@ -118,7 +118,7 @@ public class Console {
                         verifyUser();
                 }
             }
-            System.out.println("Incorrect input");
+           else {System.out.println("Incorrect input");}
         }
         verifyUser();
     }

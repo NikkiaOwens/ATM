@@ -80,7 +80,7 @@ public class InvestmentMenu {
                         break;
                 }
             }
-            System.out.println("Incorrect input");
+            else{System.out.println("Incorrect input");}
         }
     }
     public static boolean verifyAccount(User current) {

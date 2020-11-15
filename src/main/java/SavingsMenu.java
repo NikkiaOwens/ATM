@@ -78,7 +78,7 @@ public class SavingsMenu {
                         break;
                 }
             }
-            System.out.println("Incorrect input");
+            else{System.out.println("Incorrect input");}
         }
 
     }

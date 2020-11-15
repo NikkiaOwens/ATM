@@ -79,7 +79,7 @@ public class CheckingMenu {
 
                     }
                 }
-                System.out.println("Incorrect input");
+                else{System.out.println("Incorrect input");}
             }
         }
 
