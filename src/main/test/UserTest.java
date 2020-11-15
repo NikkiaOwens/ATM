@@ -4,10 +4,10 @@ import org.junit.Test;
 
 public class UserTest {
 
-    private User user;
+    //private User user;
 
-    @Before
-    public void setup(){this.user = new User();}
+    //@Before
+    //public void setup(){this.user = new User();}
 //has checking account test
     @Test
     public void setHasCheckingTest(){
@@ -48,21 +48,7 @@ public class UserTest {
 
     }
 // checking deposit/withdraw tests
-    @Test
-    public void checkingDepositTest(){
-        User user = new User();
-        Double expectedBalance = 200.0;
-        Double expectedDeposit = 200.0;
-        //double expectedWithdraw = 50.0;
-
-        user.checkingDeposit(expectedDeposit);
-        //user.checkingWithdraw(expectedWithdraw);
-
-        Double actualBalance = user.getCheckingBalance();
-
-        Assert.assertEquals(actualBalance,expectedBalance);
-
-    }
+  
 
     @Test
     public void checkingWithdrawTest(){
@@ -80,21 +66,7 @@ public class UserTest {
 
     }
 // savings deposit/withdraw tests
-    @Test
-    public void savingsDepositTest(){
-        User user = new User();
-        Double expectedBalance = 200.0;
-        Double expectedDeposit = 200.0;
 
-
-        user.savingsDeposit(expectedDeposit);
-
-
-        Double actualBalance = user.getSavingBalance();
-
-        Assert.assertEquals(actualBalance,expectedBalance);
-
-    }
 
     @Test
     public void savingsWithdrawTest(){
@@ -112,21 +84,7 @@ public class UserTest {
 
     }
 // investment deposit/withdraw tests
-    @Test
-    public void investmentDepositTest(){
-        User user = new User();
-        Double expectedBalance = 200.0;
-        Double expectedDeposit = 200.0;
 
-
-        user.investmentDeposit(expectedDeposit);
-
-
-        Double actualBalance = user.getInvestmentBalance();
-
-        Assert.assertEquals(actualBalance,expectedBalance);
-
-    }
 
     @Test
     public void investmentWithdrawTest(){
