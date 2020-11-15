@@ -103,18 +103,3 @@ public class User {
         }
     }
 }
-//}
-//public void name(String name) {
-   // this.name = name;
-//}
-//public String getName() {
-  //  return name;
-//}
- //public void setPin(Integer pin) {
-  //  this.pin = pin;
- //}
- //public Integer getPin() {
-  //  return pin;
- //}
-
-//}
