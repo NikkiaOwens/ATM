@@ -4,8 +4,10 @@ import org.junit.Test;
 
 public class UserTest {
 
+    //private User user;
 
-
+    //@Before
+    //public void setup(){this.user = new User();}
 //has checking account test
     @Test
     public void setHasCheckingTest(){
@@ -46,21 +48,7 @@ public class UserTest {
 
     }
 // checking deposit/withdraw tests
-    @Test
-    public void checkingDepositTest(){
-        User user = new User();
-        Double expectedBalance = 200.0;
-        Double expectedDeposit = 200.0;
-        //double expectedWithdraw = 50.0;
-
-        user.checkingDeposit(expectedDeposit);
-        //user.checkingWithdraw(expectedWithdraw);
-
-        Double actualBalance = user.getCheckingBalance();
-
-        Assert.assertEquals(actualBalance,expectedBalance);
-
-    }
+  
 
     @Test
     public void checkingWithdrawTest(){
@@ -78,21 +66,7 @@ public class UserTest {
 
     }
 // savings deposit/withdraw tests
-    @Test
-    public void savingsDepositTest1(){
-        User user5 = new User();
-        Double expectedBalance = 200.0;
-        Double expectedDeposit = 200.0;
 
-
-        user5.savingsDeposit(expectedDeposit);
-
-
-        Double actualBalance = user5.getSavingBalance();
-
-        Assert.assertEquals(actualBalance,expectedBalance);
-
-    }
 
     @Test
     public void savingsWithdrawTest(){
@@ -110,64 +84,50 @@ public class UserTest {
 
     }
 // investment deposit/withdraw tests
-    @Test
-    public void investmentDepositTest(){
-        User user = new User();
-        Double expectedBalance = 200.0;
-        Double expectedDeposit = 200.0;
 
+
+    @Test
+    public void investmentWithdrawTest(){
+        User user = new User();
+        Double expectedBalance = 150.0;
+        Double expectedDeposit = 200.0;
+        Double expectedWithdraw = 50.0;
 
         user.investmentDeposit(expectedDeposit);
-
+        user.investmentWithdraw(expectedWithdraw);
 
         Double actualBalance = user.getInvestmentBalance();
 
         Assert.assertEquals(actualBalance,expectedBalance);
 
     }
-
-    @Test
-    public void investmentWithdrawTest2(){
-        User user4 = new User();
-        Double expectedBalance = 150.0;
-        Double expectedDeposit = 200.0;
-        Double expectedWithdraw = 50.0;
-
-        user4.investmentDeposit(expectedDeposit);
-        user4.investmentWithdraw(expectedWithdraw);
-
-        Double actualBalance = user4.getInvestmentBalance();
-
-        Assert.assertEquals(expectedBalance,actualBalance);
-
-    }
 // close accounts test
     @Test
-    public void closeCheckingTest3(){
-        User user1 = new User();
+    public void closeCheckingTest(){
+        User user = new User();
         String expected = "Account successfully closed";
 
-        String actual = user1.closeCheck();
+        String actual = user.closeCheck();
 
         Assert.assertEquals(actual, expected);
     }
 
     @Test
-    public void closeSavingsTest4(){
-        User user2 = new User();
-        String expected = "Account successfully closed";
+    public void closeSavingsTest(){
+        User user = new User();
+        String expected = "Please withdraw all funds from your account before closing";
 
-        String actual = user2.closeSaving();
+        String actual = user.closeSaving();
 
-        Assert.assertEquals(actual, expected);
+        Assert.assertEquals(expected,actual);
     }
 
     @Test
-    public void closeInvestmentTest5(){
-        User user3 = new User();
+    public void closeInvestmentTest(){
+        User user = new User();
         String expected = "Account successfully closed";
 
-        String actual = user3.closeInvestment();
+        String actual = user.closeInvestment();
 
         Assert.assertEquals(actual, expected);
     }
