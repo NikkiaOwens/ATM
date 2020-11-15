@@ -6,7 +6,6 @@ public class Console {
     UserWarehouse UW = new UserWarehouse();
     HashMap<String, Integer> userList = UW.getAccounts();
     HashMap<String, User> objList = UW.getObjectList();
-    StringBuilder transactionHistory = new StringBuilder();
     Menu menu = new Menu();
     CheckingMenu checkingMenu = new CheckingMenu();
     SavingsMenu savingsMenu = new SavingsMenu();
