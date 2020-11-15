@@ -87,7 +87,7 @@ public class User {
        }
     }
     public String closeSaving(){
-        if(checking.getBalance() == 0){
+        if(savings.getBalance() == 0){
             return "Account successfully closed";
         }
         else {
@@ -95,7 +95,7 @@ public class User {
         }
     }
     public String closeInvestment(){
-        if(checking.getBalance() == 0){
+        if(investment.getBalance() == 0){
             return "Account successfully closed";
         }
         else {
