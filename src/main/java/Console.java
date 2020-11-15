@@ -55,12 +55,17 @@ public class Console {
         if (userList.containsKey(fullName)) {
             System.out.println("Enter password");
             Scanner pass = new Scanner(System.in);
-            Integer password = pass.nextInt();
-            if (userList.get(fullName).equals(password)) {
-                accountSelectionMenu(objList.get(fullName));
-            } else {
+            if(pass.hasNextInt()) {
+                Integer password = pass.nextInt();
+                if (userList.get(fullName).equals(password)) {
+                    accountSelectionMenu(objList.get(fullName));
+                } else {
+                    System.out.println("Incorrect password");
+                    verifyUserCheck();
+                }
+            }
+            else {
                 System.out.println("Incorrect password");
-                verifyUserCheck();
             }
         } else {
             System.out.println("Incorrect user name");

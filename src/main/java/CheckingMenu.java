@@ -17,22 +17,32 @@ public class CheckingMenu {
                         case 1:
                             System.out.println("Enter amount to withdraw");
                             Scanner withD = new Scanner(System.in);
-                            double withdraw = withD.nextDouble();
-                            System.out.println("You withdrew: ");
-                            System.out.println(current.checkingWithdraw(withdraw));
-                            System.out.println("current balance: ");
-                            System.out.println(current.getCheckingBalance());
-                            setTransactionHistory("Withdrew: " + withdraw + " from checking. " + "Remaining Balance: " + current.getCheckingBalance() + "\n");
+                            if(withD.hasNextInt()) {
+                                double withdraw = withD.nextDouble();
+                                System.out.println("You withdrew: ");
+                                System.out.println(current.checkingWithdraw(withdraw));
+                                System.out.println("current balance: ");
+                                System.out.println(current.getCheckingBalance());
+                                setTransactionHistory("Withdrew: " + withdraw + " from checking. " + "Remaining Balance: " + current.getCheckingBalance() + "\n");
+                            }
+                            else {
+                                System.out.println("Incorrect input");
+                            }
                             break;
                         case 2:
                             System.out.println("Enter amount to deposit");
                             Scanner depos = new Scanner(System.in);
-                            double deposit = depos.nextDouble();
-                            System.out.println("You deposited: ");
-                            current.checkingDeposit(deposit);
-                            System.out.println("current balance: ");
-                            System.out.println(current.getCheckingBalance());
-                            setTransactionHistory("Deposited: " + deposit + " into checking. " + "Remaining Balance: " + current.getCheckingBalance() + "\n");
+                            if(depos.hasNextInt()) {
+                                double deposit = depos.nextDouble();
+                                System.out.println("You deposited: ");
+                                current.checkingDeposit(deposit);
+                                System.out.println("current balance: ");
+                                System.out.println(current.getCheckingBalance());
+                                setTransactionHistory("Deposited: " + deposit + " into checking. " + "Remaining Balance: " + current.getCheckingBalance() + "\n");
+                            }
+                            else {
+                                System.out.println("Incorrect input");
+                            }
                             break;
                         case 3:
                             System.out.println(current.getCheckingBalance());
@@ -43,23 +53,28 @@ public class CheckingMenu {
                             String acct = type.nextLine();
                             System.out.println("Enter amount to transfer");
                             Scanner amt = new Scanner(System.in);
-                            double amount = amt.nextDouble();
-                            if (current.getCheckingBalance() >= amount) {
-                                if (acct.toLowerCase().equals("savings") && current.getHasSavings() == true) {
-                                    current.checkingWithdraw(amount);
-                                    current.savingsDeposit(amount);
-                                    System.out.println("Transfer successful \nCurrent balance: " + current.getCheckingBalance());
-                                    setTransactionHistory("Transferred to savings " + amount + " Current balance: " + current.getCheckingBalance() + " ");
-                                } else if (acct.toLowerCase().equals("investment") && current.getHasInvestment() == true) {
-                                    current.checkingWithdraw(amount);
-                                    current.investmentDeposit(amount);
-                                    System.out.println("Transfer successful \nCurrent balance: " + current.getCheckingBalance());
-                                    setTransactionHistory("Transferred to investment " + amount + " Current balance: " + current.getCheckingBalance() + " ");
+                            if(amt.hasNextInt()) {
+                                double amount = amt.nextDouble();
+                                if (current.getCheckingBalance() >= amount) {
+                                    if (acct.toLowerCase().equals("savings") && current.getHasSavings() == true) {
+                                        current.checkingWithdraw(amount);
+                                        current.savingsDeposit(amount);
+                                        System.out.println("Transfer successful \nCurrent balance: " + current.getCheckingBalance());
+                                        setTransactionHistory("Transferred to savings " + amount + " Current balance: " + current.getCheckingBalance() + " ");
+                                    } else if (acct.toLowerCase().equals("investment") && current.getHasInvestment() == true) {
+                                        current.checkingWithdraw(amount);
+                                        current.investmentDeposit(amount);
+                                        System.out.println("Transfer successful \nCurrent balance: " + current.getCheckingBalance());
+                                        setTransactionHistory("Transferred to investment " + amount + " Current balance: " + current.getCheckingBalance() + " ");
+                                    } else {
+                                        System.out.println("Account not found. Please create account before transfer.");
+                                    }
                                 } else {
-                                    System.out.println("Account not found. Please create account before transfer.");
+                                    System.out.println("You do not have sufficient funds in account");
                                 }
-                            } else {
-                                System.out.println("You do not have sufficient funds in account");
+                            }
+                            else{
+                                System.out.println("Incorrect input");
                             }
                             break;
                         case 5:
@@ -87,13 +102,18 @@ public class CheckingMenu {
         System.out.println("Would you like to create a checking account?\n" +
                 "Enter yes or no");
         Scanner scan = new Scanner(System.in);
-        String answer = scan.nextLine();
-        if (answer.toLowerCase().equals("yes")) {
-            current.setHasChecking(true);
-            System.out.println("Account creation successful.\nChecking:");
-           return true;
+        if (scan.hasNextLine()) {
+            String answer = scan.nextLine();
+            if (answer.toLowerCase().equals("yes")) {
+                current.setHasChecking(true);
+                System.out.println("Account creation successful.\nChecking:");
+                return true;
+            } else {
+                return false;
+            }
         } else {
-           return false;
+            System.out.println("Incorrect input");
+            return false;
         }
     }
     public void acctMenu(){
