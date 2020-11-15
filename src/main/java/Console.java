@@ -85,7 +85,6 @@ public class Console {
                 int selection = option.nextInt();
                 switch (selection) {
                     case 1:
-                        System.out.println("Checking");
                         if (current.getHasChecking()) {
                             checkingMenu.checkAcctMenu(current);
                         } else {
@@ -96,7 +95,6 @@ public class Console {
                         }
                         break;
                     case 2:
-                        System.out.println("Savings");
                         if (current.getHasSavings()) {
                             savingsMenu.savingsAcctMenu(current);
                         } else {
@@ -107,7 +105,6 @@ public class Console {
                         }
                         break;
                     case 3:
-                        System.out.println("Investment");
                         if (current.getHasInvestment()) {
                             investmentMenu.investmentAcctMenu(current);
                         } else {

@@ -82,7 +82,6 @@ public class InvestmentMenu {
                     case 5:
                         current.setHasInvestment(false);
                         System.out.println(current.closeInvestment());
-                        console.accountSelectionMenu(current);
                         break;
                     case 6:
                         System.out.println(getTransactionHistory());
@@ -106,7 +105,7 @@ public class InvestmentMenu {
             String answer = scan.nextLine();
             if (answer.toLowerCase().equals("yes")) {
                 current.setHasInvestment(true);
-                System.out.println("Account creation successful.\nInvestment:");
+                System.out.println("Account creation successful.\n");
                 return true;
             } else {
                 return false;
@@ -119,7 +118,7 @@ public class InvestmentMenu {
     }
 
     public void acctMenu(){
-        System.out.println("Please enter your menu selection\n" +
+        System.out.println("Investment:\nPlease enter your menu selection\n" +
                 "1:Withdraw 2:Deposit 3:Check balance 4:Transfer to my account \n" +
                 "5:Close account 6:Transaction history 7:Back");
     }
