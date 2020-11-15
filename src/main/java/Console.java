@@ -12,7 +12,9 @@ public class Console {
     SavingsMenu savingsMenu = new SavingsMenu();
     InvestmentMenu investmentMenu = new InvestmentMenu();
 
+
     public Console() {
+
     }
 
     public void verifyUser() {
