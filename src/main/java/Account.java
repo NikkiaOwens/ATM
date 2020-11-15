@@ -14,6 +14,9 @@ public abstract class Account {
         if(deposit > 0) {
             this.balance += deposit;
         }
+        else{
+            System.out.println("Incorrect input");
+        }
     }
         public double removeBalance(Double amount){
             if (this.balance >= amount && amount > 0){
