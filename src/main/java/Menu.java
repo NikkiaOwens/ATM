@@ -10,13 +10,7 @@ public class Menu {
 
     public void accountSelection(){
         System.out.println("Please enter your menu selection\n" +
-                "1: Checking 2: Savings 3: Investment 4:Print transaction history 5:Exit");
+                "1: Checking 2: Savings 3: Investment 4:Exit");
     }
-    public void acctMenu(){
-        System.out.println("Please enter your menu selection\n" +
-                "1:Withdraw 2:Deposit 3:Check balance 4:Transfer to my account \n" +
-                "5:Close account 6:Back");
-    }
-
 
 }

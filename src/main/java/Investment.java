@@ -1,7 +1,4 @@
-import com.sun.deploy.net.MessageHeader;
-import java.util.Random;
-
-public class Investment extends Account implements Storage {
+public class Investment extends Account {
     Double risk;
     public Investment(){
 
