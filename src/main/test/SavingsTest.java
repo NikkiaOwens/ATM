@@ -3,7 +3,7 @@ import org.junit.Before;
 import org.junit.Test;
 
 public class SavingsTest {
-    private Savings saving;
+    private Saving saving;
 
     @Before
     public void setup(){this.saving = new Savings();}
