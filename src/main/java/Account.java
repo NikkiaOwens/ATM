@@ -16,11 +16,12 @@ public abstract class Account {
         }
     }
         public double removeBalance(Double amount){
-            if (this.balance >= amount){
+            if (this.balance >= amount && amount > 0){
                 double newAmt = this.balance - amount;
                 this.balance = newAmt;
                 return amount;
             }
+            System.out.println("Incorrect input");
             return -1;
         }
 
