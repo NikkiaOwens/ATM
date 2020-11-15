@@ -1,3 +1,4 @@
+import org.junit.Assert;
 import org.junit.Test;
 
 import java.util.InputMismatchException;
@@ -5,7 +6,7 @@ import java.util.InputMismatchException;
 public class UserWareHouseTest {
     @Test
     public void createNewUserTest() {
-        /*UserWarehouse blue = new UserWarehouse();
+        UserWarehouse blue = new UserWarehouse();
             int max = 9999;
             int min = 1000;
             int range = max - min + 1;
@@ -13,12 +14,12 @@ public class UserWareHouseTest {
             String name = "john";
             User user = new User(name, pin);
             blue.objectList.put(name,user);
-            blue.accounts.contains(User.name, User.pin);
+          // blue.objectList.containsKey(User.name);
 
-            Assert.assertEquals;
+           Assert.assertTrue( blue.objectList.containsKey(User.name));
         }
-         */
+
     }
-    }
+
 
 
