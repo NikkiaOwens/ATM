@@ -4,11 +4,6 @@ import org.junit.Test;
 
 public class UserTest {
 
-    //private User user;
-
-    //@Before
-    //public void setup(){this.user = new User();}
-//has checking account test
     @Test
     public void setHasCheckingTest(){
         User user = new User();

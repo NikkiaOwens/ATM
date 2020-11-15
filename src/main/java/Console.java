@@ -71,7 +71,7 @@ public class Console {
             }
         } else {
             System.out.println("Incorrect user name");
-            verifyUserCheck();
+            verifyUser();
         }
     }
 
