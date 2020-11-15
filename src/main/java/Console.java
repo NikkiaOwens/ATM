@@ -46,8 +46,14 @@ public class Console {
         System.out.println("Please enter full name");
         Scanner name = new Scanner(System.in);
         String fullName = name.nextLine();
-        User newUser = UW.createNewUser(fullName);
-        System.out.println(newUser.toString());
+        if(objList.containsKey(fullName)){
+            System.out.println("User name already exists. Enter new name");
+            verifyUser();
+        }
+        else {
+            User newUser = UW.createNewUser(fullName);
+            System.out.println(newUser.toString());
+        }
     }
 
     public void verifyUserCheck() {
