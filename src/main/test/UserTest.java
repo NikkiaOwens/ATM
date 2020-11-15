@@ -4,10 +4,8 @@ import org.junit.Test;
 
 public class UserTest {
 
-    private User user;
 
-    @Before
-    public void setup(){this.user = new User();}
+
 //has checking account test
     @Test
     public void setHasCheckingTest(){
@@ -81,16 +79,16 @@ public class UserTest {
     }
 // savings deposit/withdraw tests
     @Test
-    public void savingsDepositTest(){
-        User user = new User();
+    public void savingsDepositTest1(){
+        User user5 = new User();
         Double expectedBalance = 200.0;
         Double expectedDeposit = 200.0;
 
 
-        user.savingsDeposit(expectedDeposit);
+        user5.savingsDeposit(expectedDeposit);
 
 
-        Double actualBalance = user.getSavingBalance();
+        Double actualBalance = user5.getSavingBalance();
 
         Assert.assertEquals(actualBalance,expectedBalance);
 
@@ -129,47 +127,47 @@ public class UserTest {
     }
 
     @Test
-    public void investmentWithdrawTest(){
-        User user = new User();
+    public void investmentWithdrawTest2(){
+        User user4 = new User();
         Double expectedBalance = 150.0;
         Double expectedDeposit = 200.0;
         Double expectedWithdraw = 50.0;
 
-        user.investmentDeposit(expectedDeposit);
-        user.investmentWithdraw(expectedWithdraw);
+        user4.investmentDeposit(expectedDeposit);
+        user4.investmentWithdraw(expectedWithdraw);
 
-        Double actualBalance = user.getInvestmentBalance();
+        Double actualBalance = user4.getInvestmentBalance();
 
-        Assert.assertEquals(actualBalance,expectedBalance);
+        Assert.assertEquals(expectedBalance,actualBalance);
 
     }
 // close accounts test
     @Test
-    public void closeCheckingTest(){
-        User user = new User();
+    public void closeCheckingTest3(){
+        User user1 = new User();
         String expected = "Account successfully closed";
 
-        String actual = user.closeCheck();
+        String actual = user1.closeCheck();
 
         Assert.assertEquals(actual, expected);
     }
 
     @Test
-    public void closeSavingsTest(){
-        User user = new User();
+    public void closeSavingsTest4(){
+        User user2 = new User();
         String expected = "Account successfully closed";
 
-        String actual = user.closeSaving();
+        String actual = user2.closeSaving();
 
         Assert.assertEquals(actual, expected);
     }
 
     @Test
-    public void closeInvestmentTest(){
-        User user = new User();
+    public void closeInvestmentTest5(){
+        User user3 = new User();
         String expected = "Account successfully closed";
 
-        String actual = user.closeInvestment();
+        String actual = user3.closeInvestment();
 
         Assert.assertEquals(actual, expected);
     }
